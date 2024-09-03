@@ -1,12 +1,18 @@
 ﻿#include "raylib.h"
 
+#include "dialogbox.hpp"
+
 constexpr int screenWidth = 800;
 constexpr int screenHeight = 450;
+
+using namespace vertex;
 
 int main()
 {
 	InitWindow(screenWidth, screenHeight, "Hello, game programming!");
 	SetTargetFPS(60);
+
+	DialogBox dialog;
 
 	while(!WindowShouldClose())
 	{

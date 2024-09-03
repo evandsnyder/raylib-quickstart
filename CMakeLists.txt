@@ -14,12 +14,17 @@ project ("gdp_raylib_prototype")
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_C_STANDARD 11)
 
+add_subdirectory(lib)
+
 find_package(raylib 3.0 REQUIRED)
 find_package(fmt CONFIG REQUIRED)
 
-add_executable(gdp_raylib_prototype "main.cpp")
+add_executable(gdp_raylib_prototype "main.cpp" "lib/toolkit/src/dialogbox.cpp")
 
-target_link_libraries(${PROJECT_NAME} raylib fmt::fmt)
+target_link_libraries(${PROJECT_NAME} 
+	raylib fmt::fmt
+	Toolkit
+)
 
 if(APPLE)
 	target_link_libraries(${PROJECT_NAME} "-framework IOKit")
