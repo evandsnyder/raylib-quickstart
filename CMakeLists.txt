@@ -17,13 +17,14 @@ set(CMAKE_C_STANDARD 11)
 add_subdirectory(lib)
 
 find_package(raylib 3.0 REQUIRED)
-find_package(fmt CONFIG REQUIRED)
+find_package(fmt)
 
-add_executable(gdp_raylib_prototype "main.cpp" "lib/toolkit/src/dialogbox.cpp")
+add_executable(gdp_raylib_prototype "src/main.cpp")
 
 target_link_libraries(${PROJECT_NAME} 
-	raylib fmt::fmt
+	raylib
 	Toolkit
+	fmt::fmt
 )
 
 if(APPLE)
@@ -31,3 +32,7 @@ if(APPLE)
 	target_link_libraries(${PROJECT_NAME} "-framework Cocoa")
 	target_link_libraries(${PROJECT_NAME} "-framework OpenGL")
 endif()
+
+# Must copy resources into build directory...
+file(GLOB resources assets/*)
+file(COPY ${resources} DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/assets)

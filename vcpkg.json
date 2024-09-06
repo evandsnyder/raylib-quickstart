@@ -3,6 +3,8 @@
   "version-semver": "0.1.0",
   "dependencies": [
     "fmt",
-    "raylib"
+    "raylib",
+    "libxml2",
+    "tmx"
   ]
 }
