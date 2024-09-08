@@ -95,6 +95,9 @@ public:
 		SpriteFrame.x = static_cast<float>(CurrentFrame) * static_cast<float>(ActiveSpriteSheet->width) / ActiveSpriteSheetCount;
 
 		Camera.target = { Position.x + 20, Position.y + 20 };
+
+		// TODO: Can we snap to the tile size? Or do we not care for the style of game?
+		//	If we don't care, then we need to calculate the destination position and determine if it is a valid spot
 	}
 
 	void Draw()

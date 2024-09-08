@@ -21,7 +21,7 @@ target_sources(${PROJECT_NAME}
 		"src/BoxAttributes.cpp"
 		"src/MenuOption.cpp"
 		"src/Level.cpp"
- "src/TiledMap.cpp" "src/MapExceptions.cpp")
+ "src/TiledMap.cpp" "src/MapExceptions.cpp" "src/Toolkit.cpp")
 
 target_link_libraries(${PROJECT_NAME} 
 	raylib

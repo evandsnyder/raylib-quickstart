@@ -3,6 +3,11 @@
 #include "gameconfiguration.hpp"
 
 namespace vertex {
+	DialogBox::DialogBox(float ScreenPositionX, float ScreenPositionY, int Width, int Height)
+	{
+		DialogBox(ScreenPositionX, ScreenPositionY, static_cast<float>(Width), static_cast<float>(Height));
+	}
+
 	DialogBox::DialogBox(float ScreenPositionX, float ScreenPositionY, float Width, float Height)
 		: MinimumWidth(60),
 		MaximumWidth(Configuration::Get().GetScreenWidth() - 50.0f),

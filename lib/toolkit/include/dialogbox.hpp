@@ -7,7 +7,9 @@
 namespace vertex {
 	class DialogBox {
 	public:
+		DialogBox(float ScreenPositionX, float ScreenPositionY, int Width, int Height);
 		DialogBox(float ScreenPositionX, float ScreenPositionY, float Width, float Height);
+
 
 		void SetPosition(float NewPositionX, float NewPositionY);
 		void SetBounds(float Width, float Height);

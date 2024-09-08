@@ -1,7 +1,4 @@
-﻿# CMakeList.txt : CMake project for gdp_raylib_prototype, include source and define
-# project specific logic here.
-#
-cmake_minimum_required (VERSION 3.15)
+﻿cmake_minimum_required (VERSION 3.15)
 
 # Enable Hot Reload for MSVC compilers if supported.
 if (POLICY CMP0141)
@@ -19,7 +16,7 @@ add_subdirectory(lib)
 find_package(raylib 3.0 REQUIRED)
 find_package(fmt)
 
-add_executable(gdp_raylib_prototype "src/main.cpp")
+add_executable(gdp_raylib_prototype "src/main.cpp" "sample_lessons/Variables/main.cpp")
 
 target_link_libraries(${PROJECT_NAME} 
 	raylib
@@ -34,5 +31,13 @@ if(APPLE)
 endif()
 
 # Must copy resources into build directory...
+# TODO: Make this run  during build and not configure time
 file(GLOB resources assets/*)
 file(COPY ${resources} DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/assets)
+
+
+set(BUILD_LESSONS ON)
+
+if(${BUILD_LESSONS})
+	add_subdirectory(sample_lessons)
+endif()
